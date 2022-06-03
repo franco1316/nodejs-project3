@@ -33,8 +33,8 @@ router.get("/orders", getAllOrders);
 router.get("/orders/:id", getOrder);
 
 router
-  .route("/:id")
   .use(userExist, authenticate)
+  .route("/:id")
   .patch(updateUser)
   .delete(disableUser);
 

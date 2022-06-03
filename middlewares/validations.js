@@ -48,6 +48,13 @@ const createProductValidations = [
     .withMessage("CategoryId should be a valid category"),
 ];
 
+const createCartValidations = [
+  body("userId")
+  .notEmpty().withMessage("Name cannot be empty")
+  .isInt({ min: 1 })
+  .withMessage("UserId should be a valid category"),
+];
+
 const checkValidations = (req, res, next) => {
   const errors = validationResult(req);
 
@@ -66,5 +73,6 @@ module.exports = {
   createUserValidations,
   createCategoryValidations,
   createProductValidations,
+  createCartValidations,
   checkValidations,
 };

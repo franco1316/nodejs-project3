@@ -1,6 +1,6 @@
 const express = require("express");
 
-const { protectToken, protectAdmin } = require("../middlewares/users");
+const { protectToken } = require("../middlewares/users");
 
 const {
   createCartValidations,
